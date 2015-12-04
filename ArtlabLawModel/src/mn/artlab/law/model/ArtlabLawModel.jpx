@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ArtlabLawModel"
+  Version="12.2.1.0.31"
+  SeparateXMLFiles="true"
+  PackageName="mn.artlab.law.model">
+  <DesignTime>
+    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
+    <Attr Name="_jprName" Value="../../../../../ArtlabLawModel.jpr"/>
+    <Attr Name="_jbo.SQLBuilder" Value="SQL92"/>
+    <Attr Name="_NamedConnection" Value="law"/>
+    <Attr Name="_useAnsiJoinSyntax" Value="true"/>
+    <Attr Name="_appModuleNames0" Value="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM"/>
+  </DesignTime>
+  <Containee
+    Name="shuukhmn"
+    PackageName="mn.artlab.law.model.am.shuukhmn"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="shuukhmn"
+    PackageName="mn.artlab.law.model.eo.shuukhmn"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="shuukhmn"
+    PackageName="mn.artlab.law.model.vo.shuukhmn"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

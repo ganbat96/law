@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShuukhmnDecisionRawToTypeFkAssoc"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="CourtTypeEO"
+    Cardinality="1"
+    Source="true"
+    Owner="mn.artlab.law.model.eo.shuukhmn.ShCourtTypeEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CourtTypeEO"/>
+      <Attr Name="_foreignKey" Value="mn.artlab.law.model.eo.shuukhmn.ShCourtTypeEO.ShuukhmnCourtTypePk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShCourtTypeEO.CourtTypeId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="ShDecisionRawEO"
+    Cardinality="-1"
+    Owner="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ShDecisionRawEO"/>
+      <Attr Name="_foreignKey"
+        Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO.ShuukhmnDecisionRawToTypeFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO.CourtTypeId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

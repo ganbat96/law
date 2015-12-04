@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="shuukhmnSyncPageDef"
+                Package="frags.shuukhmn">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ShDecisionRawVO" RangeSize="25" DataControl="ShuukhMnAMDataControl" id="ShDecisionRawVOIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ShDecisionRawVOIterator" id="ShDecisionRawVO">
+      <nodeDefinition DefName="mn.artlab.law.model.vo.shuukhmn.ShDecisionRawVO" Name="ShDecisionRawVO0">
+        <AttrNames>
+          <Item Value="CourtTypeId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="DecisionId"/>
+          <Item Value="ViewId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="ShuukhMnAMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

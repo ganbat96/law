@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM">
+      <AppModuleConfig DeployPlatform="LOCAL" name="ShuukhMnAMLocal" ApplicationName="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM" jbo.project="mn.artlab.law.model.ArtlabLawModel">
+         <AM-Pooling jbo.doconnectionpooling="true"/>
+         <Database jbo.sql92.JdbcDriverClass="org.postgresql.Driver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="jdbc/lawDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="ShuukhMnAMShared" ApplicationName="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM" DeployPlatform="LOCAL" jbo.project="mn.artlab.law.model.ArtlabLawModel">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.sql92.JdbcDriverClass="org.postgresql.Driver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="mn.artlab.law.model.am.shuukhmn.ShuukhMnAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/lawDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

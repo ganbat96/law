@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShDecisionRawDtlEO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="shuukhmn_decision_raw_dtl"
+  AliasName="ShDecisionRawDtlEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="DecisionId"
+    IsNotNull="true"
+    ColumnName="decision_id"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="shuukhmn_decision_raw_dtl"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="AttrName"
+    IsNotNull="true"
+    Precision="256"
+    ColumnName="attr_name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="shuukhmn_decision_raw_dtl"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="256"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AttrValue"
+    Precision="2147483647"
+    ColumnName="attr_value"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="shuukhmn_decision_raw_dtl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2147483647"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ShDecisionRawEO"
+    Association="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc"
+    AssociationEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc.ShDecisionRawEO"
+    AssociationOtherEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc.ShDecisionRawDtlEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ShuukhmnDecisionRawDtlPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="shuukhmn_decision_raw_dtl_pk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawDtlEO.DecisionId"/>
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawDtlEO.AttrName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ShuukhmnDecisionRawDtlToHdrFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="shuukhmn_decision_raw_pk"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="shuukhmn_decision_raw_dtl_to_hdr_fk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawDtlEO.DecisionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

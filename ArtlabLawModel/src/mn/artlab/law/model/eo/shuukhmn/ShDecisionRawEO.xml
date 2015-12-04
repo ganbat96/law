@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShDecisionRawEO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="shuukhmn_decision_raw"
+  AliasName="ShDecisionRawEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="DecisionId"
+    IsNotNull="true"
+    ColumnName="decision_id"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="shuukhmn_decision_raw"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ViewId"
+    IsNotNull="true"
+    Precision="64"
+    ColumnName="view_id"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="shuukhmn_decision_raw">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CourtTypeId"
+    IsNotNull="true"
+    ColumnName="court_type_id"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="shuukhmn_decision_raw"/>
+  <Attribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    ColumnName="created_date"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="shuukhmn_decision_raw"/>
+  <AccessorAttribute
+    Name="CourtTypeEO"
+    Association="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc"
+    AssociationEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc.CourtTypeEO"
+    AssociationOtherEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc.ShDecisionRawEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ShDecisionRawDtlEO"
+    Association="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc"
+    AssociationEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc.ShDecisionRawDtlEO"
+    AssociationOtherEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawDtlToHdrFkAssoc.ShDecisionRawEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ShuukhmnDecisionRawPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="shuukhmn_decision_raw_pk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO.DecisionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ShuukhmnDecisionRawToTypeFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="shuukhmn_court_type_pk"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="shuukhmn_decision_raw_to_type_fk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO.CourtTypeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

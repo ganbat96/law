@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShDecisionRawVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mn.artlab.law.model.vo.shuukhmn.ShDecisionRawVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="ShDecisionRawEO"
+    Entity="mn.artlab.law.model.eo.shuukhmn.ShDecisionRawEO"/>
+  <ViewAttribute
+    Name="CourtTypeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CourtTypeId"
+    EntityUsage="ShDecisionRawEO"
+    AliasName="court_type_id"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="ShDecisionRawEO"
+    AliasName="created_date"/>
+  <ViewAttribute
+    Name="DecisionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DecisionId"
+    EntityUsage="ShDecisionRawEO"
+    AliasName="decision_id"/>
+  <ViewAttribute
+    Name="ViewId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ViewId"
+    EntityUsage="ShDecisionRawEO"
+    AliasName="view_id"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="mn.artlab.law.model.ArtlabLawModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

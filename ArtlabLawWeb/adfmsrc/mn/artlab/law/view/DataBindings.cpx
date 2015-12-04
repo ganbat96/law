@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="mn.artlab.law.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/frags/shuukhmn/shuukhmnSync.jsff" usageId="mn_artlab_law_view_shuukhmnSyncPageDef"/>
+    <page path="/main.jsf" usageId="mn_artlab_law_view_mainPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mn_artlab_law_view_shuukhmnSyncPageDef" path="frags.shuukhmn.shuukhmnSyncPageDef"/>
+    <page id="mn_artlab_law_view_mainPageDef" path="mn.artlab.law.view.pageDefs.mainPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ShuukhMnAMDataControl" Package="mn.artlab.law.model.am.shuukhmn"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ShuukhMnAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

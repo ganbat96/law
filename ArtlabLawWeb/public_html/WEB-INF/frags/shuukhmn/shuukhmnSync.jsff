@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1" layout="vertical">
+    <af:button text="sync" id="b1" actionListener="#{pageFlowScope.syncMBean.sync}"/>
+    <af:table value="#{bindings.ShDecisionRawVO.collectionModel}" var="row" rows="#{bindings.ShDecisionRawVO.rangeSize}"
+              emptyText="#{bindings.ShDecisionRawVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" fetchSize="#{bindings.ShDecisionRawVO.rangeSize}" id="t1">
+      <af:column headerText="#{bindings.ShDecisionRawVO.hints.CourtTypeId.label}" id="c1">
+        <af:outputText value="#{row.CourtTypeId}" shortDesc="#{bindings.ShDecisionRawVO.hints.CourtTypeId.tooltip}"
+                       id="ot1">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ShDecisionRawVO.hints.CourtTypeId.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column headerText="#{bindings.ShDecisionRawVO.hints.CreatedDate.label}" id="c2">
+        <af:outputText value="#{row.CreatedDate}" shortDesc="#{bindings.ShDecisionRawVO.hints.CreatedDate.tooltip}"
+                       id="ot2">
+          <af:convertDateTime pattern="#{bindings.ShDecisionRawVO.hints.CreatedDate.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column headerText="#{bindings.ShDecisionRawVO.hints.DecisionId.label}" id="c3">
+        <af:outputText value="#{row.DecisionId}" shortDesc="#{bindings.ShDecisionRawVO.hints.DecisionId.tooltip}"
+                       id="ot3"/>
+      </af:column>
+      <af:column headerText="#{bindings.ShDecisionRawVO.hints.ViewId.label}" id="c4">
+        <af:outputText value="#{row.ViewId}" shortDesc="#{bindings.ShDecisionRawVO.hints.ViewId.tooltip}" id="ot4"/>
+      </af:column>
+    </af:table>
+  </af:panelGroupLayout>
+</ui:composition>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShCourtTypeEO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="shuukhmn_court_type"
+  AliasName="CourtTypeEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="CourtTypeId"
+    IsNotNull="true"
+    ColumnName="court_type_id"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="shuukhmn_court_type"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CourtTypeName"
+    IsNotNull="true"
+    Precision="256"
+    ColumnName="court_type_name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="shuukhmn_court_type">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="256"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TypeCode"
+    IsNotNull="true"
+    Precision="64"
+    ColumnName="type_code"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="shuukhmn_court_type">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="64"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ShDecisionRawEO"
+    Association="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc"
+    AssociationEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc.ShDecisionRawEO"
+    AssociationOtherEnd="mn.artlab.law.model.eo.shuukhmn.ShuukhmnDecisionRawToTypeFkAssoc.CourtTypeEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ShuukhmnCourtTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="shuukhmn_court_type_pk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mn.artlab.law.model.eo.shuukhmn.ShCourtTypeEO.CourtTypeId"/>
+    </AttrArray>
+  </Key>
+</Entity>
