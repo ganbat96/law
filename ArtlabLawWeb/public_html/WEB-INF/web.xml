@@ -131,6 +131,18 @@
     <extension>amf</extension>
     <mime-type>application/x-amf</mime-type>
   </mime-mapping>
+  <resource-ref>
+    <res-ref-name>tm/TimerManager</res-ref-name>
+    <res-type>commonj.timers.TimerManager</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Unshareable</res-sharing-scope>
+  </resource-ref>
+  <servlet>
+    <display-name>timer</display-name>
+    <servlet-name>timer</servlet-name>
+    <servlet-class>mn.artlab.law.view.timer.TimerServlet</servlet-class>
+    <load-on-startup>100</load-on-startup>
+  </servlet>
   <listener>
     <listener-class>oracle.adf.mbean.share.connection.ADFConnectionLifeCycleCallBack</listener-class>
   </listener>

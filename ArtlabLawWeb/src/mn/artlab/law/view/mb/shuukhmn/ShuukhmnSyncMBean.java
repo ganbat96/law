@@ -1,9 +1,12 @@
 package mn.artlab.law.view.mb.shuukhmn;
 
+import java.io.Serializable;
+
 import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
+import mn.artlab.law.view.timer.ShuukhmnTimer;
 import mn.artlab.law.view.util.ADFUtil;
 import mn.artlab.law.view.util.DateUtil;
 import mn.artlab.law.view.util.IDUtil;
@@ -15,7 +18,7 @@ import oracle.binding.OperationBinding;
 import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
 
-public class ShuukhmnSyncMBean {
+public class ShuukhmnSyncMBean implements Serializable {
     public ShuukhmnSyncMBean() {
         super();
     }
@@ -47,5 +50,9 @@ public class ShuukhmnSyncMBean {
 
         OperationBinding commit = ADFUtil.findOperation("Commit");
         commit.execute();
+    }
+
+    public String getDesc() {
+        return String.valueOf(ShuukhmnTimer.COUNT);
     }
 }

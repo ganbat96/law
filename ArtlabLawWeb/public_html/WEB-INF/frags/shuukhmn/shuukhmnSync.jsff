@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
   <af:panelGroupLayout id="pgl1" layout="vertical">
-    <af:button text="sync" id="b1" actionListener="#{pageFlowScope.syncMBean.sync}"/>
+    <af:button text="sync #{pageFlowScope.syncMBean.desc}" id="b1" actionListener="#{pageFlowScope.syncMBean.sync}"/>
     <af:table value="#{bindings.ShDecisionRawVO.collectionModel}" var="row" rows="#{bindings.ShDecisionRawVO.rangeSize}"
               emptyText="#{bindings.ShDecisionRawVO.viewable ? 'No data to display.' : 'Access Denied.'}"
               rowBandingInterval="0" fetchSize="#{bindings.ShDecisionRawVO.rangeSize}" id="t1">
